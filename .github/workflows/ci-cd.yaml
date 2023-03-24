@@ -43,6 +43,9 @@ jobs:
     needs: check-quality
 
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
 
     steps:
       - name: checkout
