@@ -1,6 +1,6 @@
 [build-system]
 build-backend = "hatchling.build"
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 
 [project]
 authors = [{name = "REPLACE_NAME REPLACE_SURNAME"}]
@@ -29,7 +29,7 @@ Issues = "https://github.com/REPLACE_GITHUB_USERNAME/REPLACE_PACKAGE_NAME/issues
 Source = "https://github.com/REPLACE_GITHUB_USERNAME/REPLACE_PACKAGE_NAME"
 
 [tool.hatch.version]
-path = "src/REPLACE_PACKAGE_NAME/__init__.py"
+source = "vcs"
 
 [project.optional-dependencies]
 docs = [
@@ -117,3 +117,6 @@ exclude = [
   "/Dockerfile",
   "/.dockerignore",
 ]
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/REPLACE_PACKAGE_NAME/_version.py"
